@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.6 on win32)" generated="20201107 14:16:37.574" rpa="false">
+<suite id="s1" name="Login Tests" source="C:\Users\Home\dev\WebDemo\login_tests">
+<suite id="s1-s1" name="Gherkin Login" source="C:\Users\Home\dev\WebDemo\login_tests\gherkin_login.robot">
+<test id="s1-s1-t1" name="Valid Login">
+<kw name="Given browser is opened to login page">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:38.045" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:7272/'.</msg>
+<msg timestamp="20201107 14:16:38.683" level="DEBUG">POST http://127.0.0.1:14047/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}</msg>
+<msg timestamp="20201107 14:16:38.684" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:14047</msg>
+<msg timestamp="20201107 14:16:42.118" level="DEBUG">http://127.0.0.1:14047 "POST /session HTTP/1.1" 200 716</msg>
+<msg timestamp="20201107 14:16:42.119" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:42.120" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/timeouts {"script": 5000}</msg>
+<msg timestamp="20201107 14:16:42.122" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:42.123" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:42.123" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/timeouts {"implicit": 0}</msg>
+<msg timestamp="20201107 14:16:42.125" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:42.126" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:42.126" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:42.685" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:42.686" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:42.686" level="DEBUG">Opened browser with session id c27001b1338e4749039c4c60b1483ef7.</msg>
+<status status="PASS" starttime="20201107 14:16:38.044" endtime="20201107 14:16:42.686"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20201107 14:16:42.689" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/window/maximize {}</msg>
+<msg timestamp="20201107 14:16:44.870" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/window/maximize HTTP/1.1" 200 52</msg>
+<msg timestamp="20201107 14:16:44.871" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:42.687" endtime="20201107 14:16:44.871"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20201107 14:16:44.871" endtime="20201107 14:16:44.872"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:44.874" level="DEBUG">GET http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/title {}</msg>
+<msg timestamp="20201107 14:16:44.891" level="DEBUG">http://127.0.0.1:14047 "GET /session/c27001b1338e4749039c4c60b1483ef7/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:44.892" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:44.892" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:44.874" endtime="20201107 14:16:44.892"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:44.873" endtime="20201107 14:16:44.893"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:38.042" endtime="20201107 14:16:44.893"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:38.038" endtime="20201107 14:16:44.893"></status>
+</kw>
+<kw name="When user &quot;demo&quot; logs in with password &quot;mode&quot;">
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:44.899" level="INFO">Typing text 'demo' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:16:44.900" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:16:44.946" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:44.948" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:44.948" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/element/5486b275-35aa-4fad-a2ba-c395da6a7b3c/clear {"id": "5486b275-35aa-4fad-a2ba-c395da6a7b3c"}</msg>
+<msg timestamp="20201107 14:16:45.024" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/element/5486b275-35aa-4fad-a2ba-c395da6a7b3c/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:45.025" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:45.025" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/element/5486b275-35aa-4fad-a2ba-c395da6a7b3c/value {"text": "demo", "value": ["d", "e", "m", "o"], "id": "5486b275-35aa-4fad-a2ba-c395da6a7b3c"}</msg>
+<msg timestamp="20201107 14:16:45.155" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/element/5486b275-35aa-4fad-a2ba-c395da6a7b3c/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:45.156" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:44.898" endtime="20201107 14:16:45.156"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:44.897" endtime="20201107 14:16:45.157"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:45.161" level="INFO">Typing text 'mode' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:16:45.161" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:16:45.186" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:45.187" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:45.187" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/element/310b3b20-bd0e-431c-8ff0-e2c6980181c8/clear {"id": "310b3b20-bd0e-431c-8ff0-e2c6980181c8"}</msg>
+<msg timestamp="20201107 14:16:45.246" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/element/310b3b20-bd0e-431c-8ff0-e2c6980181c8/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:45.246" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:45.247" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/element/310b3b20-bd0e-431c-8ff0-e2c6980181c8/value {"text": "mode", "value": ["m", "o", "d", "e"], "id": "310b3b20-bd0e-431c-8ff0-e2c6980181c8"}</msg>
+<msg timestamp="20201107 14:16:45.372" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/element/310b3b20-bd0e-431c-8ff0-e2c6980181c8/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:45.373" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:45.160" endtime="20201107 14:16:45.373"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:45.158" endtime="20201107 14:16:45.373"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:16:45.375" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:16:45.376" level="DEBUG">GET http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/url {}</msg>
+<msg timestamp="20201107 14:16:45.390" level="DEBUG">http://127.0.0.1:14047 "GET /session/c27001b1338e4749039c4c60b1483ef7/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:16:45.390" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:45.391" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:16:45.423" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:45.424" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:45.424" level="DEBUG">POST http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/element/7f558368-4121-4d64-8a50-ac6bb8da7b59/click {"id": "7f558368-4121-4d64-8a50-ac6bb8da7b59"}</msg>
+<msg timestamp="20201107 14:16:45.978" level="DEBUG">http://127.0.0.1:14047 "POST /session/c27001b1338e4749039c4c60b1483ef7/element/7f558368-4121-4d64-8a50-ac6bb8da7b59/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:45.979" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:45.375" endtime="20201107 14:16:45.980"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:45.374" endtime="20201107 14:16:45.981"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:44.896" endtime="20201107 14:16:45.984"></status>
+</kw>
+<kw name="Then welcome page should be open" library="resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:45.993" level="DEBUG">GET http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/url {}</msg>
+<msg timestamp="20201107 14:16:46.016" level="DEBUG">http://127.0.0.1:14047 "GET /session/c27001b1338e4749039c4c60b1483ef7/url HTTP/1.1" 200 46</msg>
+<msg timestamp="20201107 14:16:46.018" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:46.018" level="INFO">Current location is 'http://localhost:7272/welcome.html'.</msg>
+<status status="PASS" starttime="20201107 14:16:45.991" endtime="20201107 14:16:46.018"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Welcome Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:46.019" level="DEBUG">GET http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7/title {}</msg>
+<msg timestamp="20201107 14:16:46.032" level="DEBUG">http://127.0.0.1:14047 "GET /session/c27001b1338e4749039c4c60b1483ef7/title HTTP/1.1" 200 24</msg>
+<msg timestamp="20201107 14:16:46.033" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:46.033" level="INFO">Page title is 'Welcome Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:46.018" endtime="20201107 14:16:46.033"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:45.989" endtime="20201107 14:16:46.034"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<msg timestamp="20201107 14:16:46.037" level="DEBUG">Closing browser with session id c27001b1338e4749039c4c60b1483ef7.</msg>
+<msg timestamp="20201107 14:16:46.038" level="DEBUG">DELETE http://127.0.0.1:14047/session/c27001b1338e4749039c4c60b1483ef7 {}</msg>
+<msg timestamp="20201107 14:16:46.264" level="DEBUG">http://127.0.0.1:14047 "DELETE /session/c27001b1338e4749039c4c60b1483ef7 HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:46.265" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:46.037" endtime="20201107 14:16:48.543"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:38.036" endtime="20201107 14:16:48.545" critical="yes"></status>
+</test>
+<doc>A test suite with a single Gherkin style test.
+
+This test is functionally identical to the example in
+valid_login.robot file.</doc>
+<status status="PASS" starttime="20201107 14:16:37.624" endtime="20201107 14:16:48.600"></status>
+</suite>
+<suite id="s1-s2" name="Invalid Login" source="C:\Users\Home\dev\WebDemo\login_tests\invalid_login.robot">
+<kw name="Open Browser To Login Page" library="resource" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:48.693" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:7272/'.</msg>
+<msg timestamp="20201107 14:16:49.210" level="DEBUG">POST http://127.0.0.1:14085/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}</msg>
+<msg timestamp="20201107 14:16:49.211" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:14085</msg>
+<msg timestamp="20201107 14:16:52.270" level="DEBUG">http://127.0.0.1:14085 "POST /session HTTP/1.1" 200 714</msg>
+<msg timestamp="20201107 14:16:52.271" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:52.271" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/timeouts {"script": 5000}</msg>
+<msg timestamp="20201107 14:16:52.273" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:52.273" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:52.273" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/timeouts {"implicit": 0}</msg>
+<msg timestamp="20201107 14:16:52.275" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:52.275" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:52.276" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:52.834" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:52.835" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:52.836" level="DEBUG">Opened browser with session id 536af6c3a81dad51254d3a7764e6f20e.</msg>
+<status status="PASS" starttime="20201107 14:16:48.692" endtime="20201107 14:16:52.836"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20201107 14:16:52.839" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/window/maximize {}</msg>
+<msg timestamp="20201107 14:16:54.992" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/window/maximize HTTP/1.1" 200 52</msg>
+<msg timestamp="20201107 14:16:54.993" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:52.837" endtime="20201107 14:16:54.994"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20201107 14:16:54.994" endtime="20201107 14:16:54.995"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:54.996" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:55.012" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:55.013" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.013" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:54.996" endtime="20201107 14:16:55.013"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:54.995" endtime="20201107 14:16:55.014"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:48.691" endtime="20201107 14:16:55.014"></status>
+</kw>
+<test id="s1-s2-t1" name="Invalid Username">
+<kw name="Go To Login Page" library="resource" type="setup">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:55.017" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<msg timestamp="20201107 14:16:55.017" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:55.408" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:55.410" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:55.016" endtime="20201107 14:16:55.410"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:55.414" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:55.425" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:55.425" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.425" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:55.413" endtime="20201107 14:16:55.425"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:55.411" endtime="20201107 14:16:55.426"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:55.016" endtime="20201107 14:16:55.426"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>invalid</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:55.431" level="INFO">Typing text 'invalid' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:16:55.431" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:16:55.460" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:55.460" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.461" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/bcc515b8-5ffe-4720-94d3-0c449c8eaf7c/clear {"id": "bcc515b8-5ffe-4720-94d3-0c449c8eaf7c"}</msg>
+<msg timestamp="20201107 14:16:55.514" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/bcc515b8-5ffe-4720-94d3-0c449c8eaf7c/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:55.514" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.515" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/bcc515b8-5ffe-4720-94d3-0c449c8eaf7c/value {"text": "invalid", "value": ["i", "n", "v", "a", "l", "i", "d"], "id": "bcc515b8-5ffe-4720-94d3-0c449c8eaf7c"}</msg>
+<msg timestamp="20201107 14:16:55.618" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/bcc515b8-5ffe-4720-94d3-0c449c8eaf7c/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:55.619" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:55.430" endtime="20201107 14:16:55.619"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:55.430" endtime="20201107 14:16:55.619"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:55.621" level="INFO">Typing text 'mode' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:16:55.621" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:16:55.642" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:55.643" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.643" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/a77e60a0-afe6-4f25-84f2-845b3beed159/clear {"id": "a77e60a0-afe6-4f25-84f2-845b3beed159"}</msg>
+<msg timestamp="20201107 14:16:55.703" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/a77e60a0-afe6-4f25-84f2-845b3beed159/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:55.704" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.704" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/a77e60a0-afe6-4f25-84f2-845b3beed159/value {"text": "mode", "value": ["m", "o", "d", "e"], "id": "a77e60a0-afe6-4f25-84f2-845b3beed159"}</msg>
+<msg timestamp="20201107 14:16:55.832" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/a77e60a0-afe6-4f25-84f2-845b3beed159/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:55.833" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:55.620" endtime="20201107 14:16:55.833"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:55.620" endtime="20201107 14:16:55.834"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:16:55.835" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:16:55.835" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:55.846" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:16:55.847" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.848" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:16:55.875" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:55.875" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:55.876" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/48841a22-2a5d-450d-bd6b-1918ad4804fc/click {"id": "48841a22-2a5d-450d-bd6b-1918ad4804fc"}</msg>
+<msg timestamp="20201107 14:16:56.059" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/48841a22-2a5d-450d-bd6b-1918ad4804fc/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.060" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:55.835" endtime="20201107 14:16:56.060"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:55.834" endtime="20201107 14:16:56.060"></status>
+</kw>
+<kw name="Login Should Have Failed">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.061" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:56.084" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 44</msg>
+<msg timestamp="20201107 14:16:56.085" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.085" level="INFO">Current location is 'http://localhost:7272/error.html'.</msg>
+<status status="PASS" starttime="20201107 14:16:56.061" endtime="20201107 14:16:56.085"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.086" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:56.094" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:56.095" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.095" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:56.085" endtime="20201107 14:16:56.095"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.060" endtime="20201107 14:16:56.095"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:55.427" endtime="20201107 14:16:56.096"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:55.014" endtime="20201107 14:16:56.098" critical="yes"></status>
+</test>
+<test id="s1-s2-t2" name="Invalid Password">
+<kw name="Go To Login Page" library="resource" type="setup">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.117" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<msg timestamp="20201107 14:16:56.117" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:56.240" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.241" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:56.116" endtime="20201107 14:16:56.241"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.242" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:56.298" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:56.299" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.300" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:56.242" endtime="20201107 14:16:56.300"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.241" endtime="20201107 14:16:56.300"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.115" endtime="20201107 14:16:56.300"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>invalid</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.304" level="INFO">Typing text 'demo' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:16:56.305" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:16:56.326" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:56.327" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.327" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/929a0dca-66b2-4936-9a42-2cf050b4a637/clear {"id": "929a0dca-66b2-4936-9a42-2cf050b4a637"}</msg>
+<msg timestamp="20201107 14:16:56.386" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/929a0dca-66b2-4936-9a42-2cf050b4a637/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.386" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.387" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/929a0dca-66b2-4936-9a42-2cf050b4a637/value {"text": "demo", "value": ["d", "e", "m", "o"], "id": "929a0dca-66b2-4936-9a42-2cf050b4a637"}</msg>
+<msg timestamp="20201107 14:16:56.486" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/929a0dca-66b2-4936-9a42-2cf050b4a637/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.487" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:56.304" endtime="20201107 14:16:56.487"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.303" endtime="20201107 14:16:56.488"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.490" level="INFO">Typing text 'invalid' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:16:56.490" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:16:56.503" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:56.503" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.504" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/c941595a-c56d-4599-97e8-9cfd4fe83e80/clear {"id": "c941595a-c56d-4599-97e8-9cfd4fe83e80"}</msg>
+<msg timestamp="20201107 14:16:56.555" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/c941595a-c56d-4599-97e8-9cfd4fe83e80/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.556" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.556" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/c941595a-c56d-4599-97e8-9cfd4fe83e80/value {"text": "invalid", "value": ["i", "n", "v", "a", "l", "i", "d"], "id": "c941595a-c56d-4599-97e8-9cfd4fe83e80"}</msg>
+<msg timestamp="20201107 14:16:56.663" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/c941595a-c56d-4599-97e8-9cfd4fe83e80/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.664" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:56.489" endtime="20201107 14:16:56.665"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.488" endtime="20201107 14:16:56.665"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.667" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:16:56.667" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:56.677" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:16:56.677" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.678" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:16:56.689" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:56.690" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.690" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/28529aa3-fe59-4deb-9a40-601d809f77ce/click {"id": "28529aa3-fe59-4deb-9a40-601d809f77ce"}</msg>
+<msg timestamp="20201107 14:16:56.843" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/28529aa3-fe59-4deb-9a40-601d809f77ce/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.844" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:56.666" endtime="20201107 14:16:56.844"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.665" endtime="20201107 14:16:56.844"></status>
+</kw>
+<kw name="Login Should Have Failed">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.847" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:56.865" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 44</msg>
+<msg timestamp="20201107 14:16:56.866" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.866" level="INFO">Current location is 'http://localhost:7272/error.html'.</msg>
+<status status="PASS" starttime="20201107 14:16:56.846" endtime="20201107 14:16:56.866"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.867" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:56.879" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:56.879" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:56.879" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:56.866" endtime="20201107 14:16:56.879"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.845" endtime="20201107 14:16:56.880"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.302" endtime="20201107 14:16:56.881"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.112" endtime="20201107 14:16:56.881" critical="yes"></status>
+</test>
+<test id="s1-s2-t3" name="Invalid Username And Password">
+<kw name="Go To Login Page" library="resource" type="setup">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.893" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<msg timestamp="20201107 14:16:56.893" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:56.989" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:56.990" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:56.893" endtime="20201107 14:16:56.990"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:56.993" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:57.007" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:57.008" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.008" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:56.992" endtime="20201107 14:16:57.009"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.991" endtime="20201107 14:16:57.010"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.892" endtime="20201107 14:16:57.011"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>invalid</arg>
+<arg>whatever</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.016" level="INFO">Typing text 'invalid' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:16:57.017" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:16:57.034" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:57.035" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.035" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/0d2ead12-149f-4637-b7a6-3cde9f5d476f/clear {"id": "0d2ead12-149f-4637-b7a6-3cde9f5d476f"}</msg>
+<msg timestamp="20201107 14:16:57.093" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/0d2ead12-149f-4637-b7a6-3cde9f5d476f/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.094" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.094" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/0d2ead12-149f-4637-b7a6-3cde9f5d476f/value {"text": "invalid", "value": ["i", "n", "v", "a", "l", "i", "d"], "id": "0d2ead12-149f-4637-b7a6-3cde9f5d476f"}</msg>
+<msg timestamp="20201107 14:16:57.191" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/0d2ead12-149f-4637-b7a6-3cde9f5d476f/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.192" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:57.016" endtime="20201107 14:16:57.192"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.015" endtime="20201107 14:16:57.192"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.193" level="INFO">Typing text 'whatever' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:16:57.194" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:16:57.206" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:57.206" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.206" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/af044851-e09b-460b-8fcf-b18507ceacbf/clear {"id": "af044851-e09b-460b-8fcf-b18507ceacbf"}</msg>
+<msg timestamp="20201107 14:16:57.258" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/af044851-e09b-460b-8fcf-b18507ceacbf/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.259" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.259" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/af044851-e09b-460b-8fcf-b18507ceacbf/value {"text": "whatever", "value": ["w", "h", "a", "t", "e", "v", "e", "r"], "id": "af044851-e09b-460b-8fcf-b18507ceacbf"}</msg>
+<msg timestamp="20201107 14:16:57.386" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/af044851-e09b-460b-8fcf-b18507ceacbf/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.386" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:57.193" endtime="20201107 14:16:57.386"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.192" endtime="20201107 14:16:57.386"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.387" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:16:57.388" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:57.395" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:16:57.395" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.395" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:16:57.408" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:57.408" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.409" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/aa7b19bf-bf38-438c-9e41-11637a852969/click {"id": "aa7b19bf-bf38-438c-9e41-11637a852969"}</msg>
+<msg timestamp="20201107 14:16:57.556" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/aa7b19bf-bf38-438c-9e41-11637a852969/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.557" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:57.387" endtime="20201107 14:16:57.557"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.387" endtime="20201107 14:16:57.557"></status>
+</kw>
+<kw name="Login Should Have Failed">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.559" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:57.569" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 44</msg>
+<msg timestamp="20201107 14:16:57.571" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.573" level="INFO">Current location is 'http://localhost:7272/error.html'.</msg>
+<status status="PASS" starttime="20201107 14:16:57.558" endtime="20201107 14:16:57.573"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.575" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:57.586" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:57.587" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.587" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:57.574" endtime="20201107 14:16:57.587"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.558" endtime="20201107 14:16:57.588"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.012" endtime="20201107 14:16:57.588"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:56.890" endtime="20201107 14:16:57.590" critical="yes"></status>
+</test>
+<test id="s1-s2-t4" name="Empty Username">
+<kw name="Go To Login Page" library="resource" type="setup">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.607" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<msg timestamp="20201107 14:16:57.607" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:57.742" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.743" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:57.607" endtime="20201107 14:16:57.743"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.746" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:57.759" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:57.760" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.760" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:57.745" endtime="20201107 14:16:57.760"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.744" endtime="20201107 14:16:57.761"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.606" endtime="20201107 14:16:57.761"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.767" level="INFO">Typing text '' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:16:57.768" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:16:57.781" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:57.781" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.782" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/11fb0673-15e7-4f55-b2b0-77ef11b0a191/clear {"id": "11fb0673-15e7-4f55-b2b0-77ef11b0a191"}</msg>
+<msg timestamp="20201107 14:16:57.846" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/11fb0673-15e7-4f55-b2b0-77ef11b0a191/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.846" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.847" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/11fb0673-15e7-4f55-b2b0-77ef11b0a191/value {"text": "", "value": [], "id": "11fb0673-15e7-4f55-b2b0-77ef11b0a191"}</msg>
+<msg timestamp="20201107 14:16:57.918" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/11fb0673-15e7-4f55-b2b0-77ef11b0a191/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.919" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:57.766" endtime="20201107 14:16:57.919"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.765" endtime="20201107 14:16:57.920"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:57.922" level="INFO">Typing text 'mode' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:16:57.923" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:16:57.938" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:57.939" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.939" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/a4c85f55-0281-4571-bbf5-987b639893a2/clear {"id": "a4c85f55-0281-4571-bbf5-987b639893a2"}</msg>
+<msg timestamp="20201107 14:16:57.989" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/a4c85f55-0281-4571-bbf5-987b639893a2/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:57.990" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:57.990" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/a4c85f55-0281-4571-bbf5-987b639893a2/value {"text": "mode", "value": ["m", "o", "d", "e"], "id": "a4c85f55-0281-4571-bbf5-987b639893a2"}</msg>
+<msg timestamp="20201107 14:16:58.075" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/a4c85f55-0281-4571-bbf5-987b639893a2/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.076" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:57.921" endtime="20201107 14:16:58.076"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.920" endtime="20201107 14:16:58.076"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.077" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:16:58.078" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:58.086" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:16:58.086" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.086" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:16:58.099" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:58.100" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.100" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/f8b79bb7-e489-4e65-84cd-3006fd4efb0c/click {"id": "f8b79bb7-e489-4e65-84cd-3006fd4efb0c"}</msg>
+<msg timestamp="20201107 14:16:58.254" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/f8b79bb7-e489-4e65-84cd-3006fd4efb0c/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.255" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:58.077" endtime="20201107 14:16:58.255"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.076" endtime="20201107 14:16:58.257"></status>
+</kw>
+<kw name="Login Should Have Failed">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.259" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:58.267" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 44</msg>
+<msg timestamp="20201107 14:16:58.268" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.268" level="INFO">Current location is 'http://localhost:7272/error.html'.</msg>
+<status status="PASS" starttime="20201107 14:16:58.258" endtime="20201107 14:16:58.268"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.270" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:58.280" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:58.281" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.281" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:58.269" endtime="20201107 14:16:58.281"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.257" endtime="20201107 14:16:58.282"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.763" endtime="20201107 14:16:58.282"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:57.600" endtime="20201107 14:16:58.283" critical="yes"></status>
+</test>
+<test id="s1-s2-t5" name="Empty Password">
+<kw name="Go To Login Page" library="resource" type="setup">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.293" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<msg timestamp="20201107 14:16:58.293" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:58.437" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.438" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:58.293" endtime="20201107 14:16:58.438"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.444" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:58.460" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:58.461" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.461" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:58.442" endtime="20201107 14:16:58.461"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.439" endtime="20201107 14:16:58.461"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.292" endtime="20201107 14:16:58.462"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${VALID USER}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.467" level="INFO">Typing text 'demo' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:16:58.467" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:16:58.485" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:58.486" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.486" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/3b7806bb-a09e-4500-8303-e6a365ba7bb5/clear {"id": "3b7806bb-a09e-4500-8303-e6a365ba7bb5"}</msg>
+<msg timestamp="20201107 14:16:58.551" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/3b7806bb-a09e-4500-8303-e6a365ba7bb5/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.552" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.552" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/3b7806bb-a09e-4500-8303-e6a365ba7bb5/value {"text": "demo", "value": ["d", "e", "m", "o"], "id": "3b7806bb-a09e-4500-8303-e6a365ba7bb5"}</msg>
+<msg timestamp="20201107 14:16:58.640" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/3b7806bb-a09e-4500-8303-e6a365ba7bb5/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.641" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:58.466" endtime="20201107 14:16:58.641"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.464" endtime="20201107 14:16:58.641"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.642" level="INFO">Typing text '' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:16:58.643" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:16:58.655" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:58.655" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.655" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/ffb54d71-72e6-495d-b82e-f56951dc7993/clear {"id": "ffb54d71-72e6-495d-b82e-f56951dc7993"}</msg>
+<msg timestamp="20201107 14:16:58.709" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/ffb54d71-72e6-495d-b82e-f56951dc7993/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.709" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.709" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/ffb54d71-72e6-495d-b82e-f56951dc7993/value {"text": "", "value": [], "id": "ffb54d71-72e6-495d-b82e-f56951dc7993"}</msg>
+<msg timestamp="20201107 14:16:58.776" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/ffb54d71-72e6-495d-b82e-f56951dc7993/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.777" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:58.642" endtime="20201107 14:16:58.777"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.641" endtime="20201107 14:16:58.778"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.779" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:16:58.779" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:58.788" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:16:58.788" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.789" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:16:58.800" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:58.801" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.801" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/00f8551c-c70d-4d64-82a9-447ecdecb9df/click {"id": "00f8551c-c70d-4d64-82a9-447ecdecb9df"}</msg>
+<msg timestamp="20201107 14:16:58.963" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/00f8551c-c70d-4d64-82a9-447ecdecb9df/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:58.964" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:58.779" endtime="20201107 14:16:58.964"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.778" endtime="20201107 14:16:58.965"></status>
+</kw>
+<kw name="Login Should Have Failed">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.969" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:58.983" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 44</msg>
+<msg timestamp="20201107 14:16:58.984" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.984" level="INFO">Current location is 'http://localhost:7272/error.html'.</msg>
+<status status="PASS" starttime="20201107 14:16:58.968" endtime="20201107 14:16:58.984"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:58.985" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:58.996" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:58.997" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:58.997" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:58.984" endtime="20201107 14:16:58.997"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.966" endtime="20201107 14:16:58.997"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.463" endtime="20201107 14:16:58.997"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:58.291" endtime="20201107 14:16:58.999" critical="yes"></status>
+</test>
+<test id="s1-s2-t6" name="Empty Username And Password">
+<kw name="Go To Login Page" library="resource" type="setup">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:59.011" level="INFO">Opening url 'http://localhost:7272/'</msg>
+<msg timestamp="20201107 14:16:59.011" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:16:59.113" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:59.114" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:59.010" endtime="20201107 14:16:59.114"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:59.118" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:59.127" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:59.128" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.128" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:59.116" endtime="20201107 14:16:59.129"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.114" endtime="20201107 14:16:59.129"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.009" endtime="20201107 14:16:59.129"></status>
+</kw>
+<kw name="Login With Invalid Credentials Should Fail">
+<arguments>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+</arguments>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:59.135" level="INFO">Typing text '' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:16:59.135" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:16:59.149" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:59.150" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.150" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/ca75486b-8992-4db1-89a2-da463282b77e/clear {"id": "ca75486b-8992-4db1-89a2-da463282b77e"}</msg>
+<msg timestamp="20201107 14:16:59.209" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/ca75486b-8992-4db1-89a2-da463282b77e/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:59.209" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.210" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/ca75486b-8992-4db1-89a2-da463282b77e/value {"text": "", "value": [], "id": "ca75486b-8992-4db1-89a2-da463282b77e"}</msg>
+<msg timestamp="20201107 14:16:59.278" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/ca75486b-8992-4db1-89a2-da463282b77e/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:59.279" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:59.134" endtime="20201107 14:16:59.279"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.132" endtime="20201107 14:16:59.279"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:59.283" level="INFO">Typing text '' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:16:59.283" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:16:59.296" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:59.297" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.297" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/87393d0a-4349-484d-abda-5def9263d56d/clear {"id": "87393d0a-4349-484d-abda-5def9263d56d"}</msg>
+<msg timestamp="20201107 14:16:59.353" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/87393d0a-4349-484d-abda-5def9263d56d/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:59.354" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.354" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/87393d0a-4349-484d-abda-5def9263d56d/value {"text": "", "value": [], "id": "87393d0a-4349-484d-abda-5def9263d56d"}</msg>
+<msg timestamp="20201107 14:16:59.420" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/87393d0a-4349-484d-abda-5def9263d56d/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:59.421" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:59.282" endtime="20201107 14:16:59.421"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.280" endtime="20201107 14:16:59.421"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:16:59.423" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:16:59.423" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:59.434" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:16:59.435" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.435" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:16:59.447" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:16:59.447" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.447" level="DEBUG">POST http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/element/c030af8c-2f61-4fd6-9688-058481f5299f/click {"id": "c030af8c-2f61-4fd6-9688-058481f5299f"}</msg>
+<msg timestamp="20201107 14:16:59.621" level="DEBUG">http://127.0.0.1:14085 "POST /session/536af6c3a81dad51254d3a7764e6f20e/element/c030af8c-2f61-4fd6-9688-058481f5299f/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:59.623" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:59.422" endtime="20201107 14:16:59.623"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.422" endtime="20201107 14:16:59.624"></status>
+</kw>
+<kw name="Login Should Have Failed">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ERROR URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:16:59.628" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/url {}</msg>
+<msg timestamp="20201107 14:16:59.641" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/url HTTP/1.1" 200 44</msg>
+<msg timestamp="20201107 14:16:59.644" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.644" level="INFO">Current location is 'http://localhost:7272/error.html'.</msg>
+<status status="PASS" starttime="20201107 14:16:59.625" endtime="20201107 14:16:59.644"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Error Page</arg>
+</arguments>
+<msg timestamp="20201107 14:16:59.646" level="DEBUG">GET http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e/title {}</msg>
+<msg timestamp="20201107 14:16:59.653" level="DEBUG">http://127.0.0.1:14085 "GET /session/536af6c3a81dad51254d3a7764e6f20e/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:16:59.653" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:16:59.653" level="INFO">Page title is 'Error Page'.</msg>
+<status status="PASS" starttime="20201107 14:16:59.645" endtime="20201107 14:16:59.654"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.624" endtime="20201107 14:16:59.654"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.131" endtime="20201107 14:16:59.654"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:16:59.007" endtime="20201107 14:16:59.655" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<msg timestamp="20201107 14:16:59.664" level="DEBUG">Closing browser with session id 536af6c3a81dad51254d3a7764e6f20e.</msg>
+<msg timestamp="20201107 14:16:59.665" level="DEBUG">DELETE http://127.0.0.1:14085/session/536af6c3a81dad51254d3a7764e6f20e {}</msg>
+<msg timestamp="20201107 14:16:59.830" level="DEBUG">http://127.0.0.1:14085 "DELETE /session/536af6c3a81dad51254d3a7764e6f20e HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:16:59.831" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:16:59.664" endtime="20201107 14:17:02.060"></status>
+</kw>
+<doc>A test suite containing tests related to invalid login.
+
+These tests are data-driven by their nature. They use a single
+keyword, specified with Test Template setting, that is called
+with different arguments to cover different scenarios.
+
+This suite also demonstrates using setups and teardowns in
+different levels.</doc>
+<status status="PASS" starttime="20201107 14:16:48.648" endtime="20201107 14:17:02.060"></status>
+</suite>
+<suite id="s1-s3" name="Valid Login" source="C:\Users\Home\dev\WebDemo\login_tests\valid_login.robot">
+<test id="s1-s3-t1" name="Valid Login">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20201107 14:17:02.167" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:7272/'.</msg>
+<msg timestamp="20201107 14:17:02.698" level="DEBUG">POST http://127.0.0.1:14126/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}</msg>
+<msg timestamp="20201107 14:17:02.699" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:14126</msg>
+<msg timestamp="20201107 14:17:05.949" level="DEBUG">http://127.0.0.1:14126 "POST /session HTTP/1.1" 200 716</msg>
+<msg timestamp="20201107 14:17:05.949" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:05.949" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/timeouts {"script": 5000}</msg>
+<msg timestamp="20201107 14:17:05.951" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:05.951" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:05.952" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/timeouts {"implicit": 0}</msg>
+<msg timestamp="20201107 14:17:05.953" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/timeouts HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:05.953" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:05.954" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/url {"url": "http://localhost:7272/"}</msg>
+<msg timestamp="20201107 14:17:06.488" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/url HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:06.490" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:06.490" level="DEBUG">Opened browser with session id cfeebcf233d03f53956d95c317069075.</msg>
+<status status="PASS" starttime="20201107 14:17:02.166" endtime="20201107 14:17:06.490"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<msg timestamp="20201107 14:17:06.492" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/window/maximize {}</msg>
+<msg timestamp="20201107 14:17:08.640" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/window/maximize HTTP/1.1" 200 52</msg>
+<msg timestamp="20201107 14:17:08.640" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:17:06.491" endtime="20201107 14:17:08.641"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20201107 14:17:08.641" endtime="20201107 14:17:08.641"></status>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Login Page</arg>
+</arguments>
+<msg timestamp="20201107 14:17:08.643" level="DEBUG">GET http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/title {}</msg>
+<msg timestamp="20201107 14:17:08.652" level="DEBUG">http://127.0.0.1:14126 "GET /session/cfeebcf233d03f53956d95c317069075/title HTTP/1.1" 200 22</msg>
+<msg timestamp="20201107 14:17:08.652" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:08.652" level="INFO">Page title is 'Login Page'.</msg>
+<status status="PASS" starttime="20201107 14:17:08.642" endtime="20201107 14:17:08.652"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:17:08.642" endtime="20201107 14:17:08.653"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:17:02.162" endtime="20201107 14:17:08.653"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>demo</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>username_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201107 14:17:08.656" level="INFO">Typing text 'demo' into text field 'username_field'.</msg>
+<msg timestamp="20201107 14:17:08.656" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/elements {"using": "xpath", "value": "//*[(@id='username_field' or @name='username_field')]"}</msg>
+<msg timestamp="20201107 14:17:08.681" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:17:08.681" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:08.682" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/element/82b899a2-60ef-4074-9de4-af1a82bc95f3/clear {"id": "82b899a2-60ef-4074-9de4-af1a82bc95f3"}</msg>
+<msg timestamp="20201107 14:17:08.740" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/element/82b899a2-60ef-4074-9de4-af1a82bc95f3/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:08.741" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:08.741" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/element/82b899a2-60ef-4074-9de4-af1a82bc95f3/value {"text": "demo", "value": ["d", "e", "m", "o"], "id": "82b899a2-60ef-4074-9de4-af1a82bc95f3"}</msg>
+<msg timestamp="20201107 14:17:08.840" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/element/82b899a2-60ef-4074-9de4-af1a82bc95f3/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:08.841" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:17:08.655" endtime="20201107 14:17:08.841"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:17:08.654" endtime="20201107 14:17:08.842"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>mode</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201107 14:17:08.846" level="INFO">Typing text 'mode' into text field 'password_field'.</msg>
+<msg timestamp="20201107 14:17:08.846" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/elements {"using": "xpath", "value": "//*[(@id='password_field' or @name='password_field')]"}</msg>
+<msg timestamp="20201107 14:17:08.870" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:17:08.871" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:08.871" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/element/6f3381c0-9b08-41fa-b337-464f368fccaa/clear {"id": "6f3381c0-9b08-41fa-b337-464f368fccaa"}</msg>
+<msg timestamp="20201107 14:17:08.935" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/element/6f3381c0-9b08-41fa-b337-464f368fccaa/clear HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:08.935" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:08.935" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/element/6f3381c0-9b08-41fa-b337-464f368fccaa/value {"text": "mode", "value": ["m", "o", "d", "e"], "id": "6f3381c0-9b08-41fa-b337-464f368fccaa"}</msg>
+<msg timestamp="20201107 14:17:09.023" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/element/6f3381c0-9b08-41fa-b337-464f368fccaa/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:09.024" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:17:08.845" endtime="20201107 14:17:09.024"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:17:08.843" endtime="20201107 14:17:09.024"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20201107 14:17:09.027" level="INFO">Clicking button 'login_button'.</msg>
+<msg timestamp="20201107 14:17:09.027" level="DEBUG">GET http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/url {}</msg>
+<msg timestamp="20201107 14:17:09.037" level="DEBUG">http://127.0.0.1:14126 "GET /session/cfeebcf233d03f53956d95c317069075/url HTTP/1.1" 200 34</msg>
+<msg timestamp="20201107 14:17:09.038" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:09.038" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/elements {"using": "xpath", "value": "//input[(@id='login_button' or @name='login_button' or @value='login_button' or @src='login_button' or @src='http://localhost:7272/login_button')]"}</msg>
+<msg timestamp="20201107 14:17:09.060" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/elements HTTP/1.1" 200 90</msg>
+<msg timestamp="20201107 14:17:09.060" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:09.060" level="DEBUG">POST http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/element/30b0c8e4-8059-4b30-b132-5a0936d2cf1d/click {"id": "30b0c8e4-8059-4b30-b132-5a0936d2cf1d"}</msg>
+<msg timestamp="20201107 14:17:09.516" level="DEBUG">http://127.0.0.1:14126 "POST /session/cfeebcf233d03f53956d95c317069075/element/30b0c8e4-8059-4b30-b132-5a0936d2cf1d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:09.517" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:17:09.026" endtime="20201107 14:17:09.518"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:17:09.026" endtime="20201107 14:17:09.518"></status>
+</kw>
+<kw name="Welcome Page Should Be Open" library="resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${WELCOME URL}</arg>
+</arguments>
+<msg timestamp="20201107 14:17:09.527" level="DEBUG">GET http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/url {}</msg>
+<msg timestamp="20201107 14:17:09.551" level="DEBUG">http://127.0.0.1:14126 "GET /session/cfeebcf233d03f53956d95c317069075/url HTTP/1.1" 200 46</msg>
+<msg timestamp="20201107 14:17:09.552" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:09.552" level="INFO">Current location is 'http://localhost:7272/welcome.html'.</msg>
+<status status="PASS" starttime="20201107 14:17:09.524" endtime="20201107 14:17:09.553"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Welcome Page</arg>
+</arguments>
+<msg timestamp="20201107 14:17:09.554" level="DEBUG">GET http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075/title {}</msg>
+<msg timestamp="20201107 14:17:09.562" level="DEBUG">http://127.0.0.1:14126 "GET /session/cfeebcf233d03f53956d95c317069075/title HTTP/1.1" 200 24</msg>
+<msg timestamp="20201107 14:17:09.562" level="DEBUG">Finished Request</msg>
+<msg timestamp="20201107 14:17:09.563" level="INFO">Page title is 'Welcome Page'.</msg>
+<status status="PASS" starttime="20201107 14:17:09.553" endtime="20201107 14:17:09.563"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:17:09.522" endtime="20201107 14:17:09.563"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<msg timestamp="20201107 14:17:09.566" level="DEBUG">Closing browser with session id cfeebcf233d03f53956d95c317069075.</msg>
+<msg timestamp="20201107 14:17:09.567" level="DEBUG">DELETE http://127.0.0.1:14126/session/cfeebcf233d03f53956d95c317069075 {}</msg>
+<msg timestamp="20201107 14:17:09.741" level="DEBUG">http://127.0.0.1:14126 "DELETE /session/cfeebcf233d03f53956d95c317069075 HTTP/1.1" 200 14</msg>
+<msg timestamp="20201107 14:17:09.742" level="DEBUG">Finished Request</msg>
+<status status="PASS" starttime="20201107 14:17:09.565" endtime="20201107 14:17:12.001"></status>
+</kw>
+<status status="PASS" starttime="20201107 14:17:02.144" endtime="20201107 14:17:12.003" critical="yes"></status>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" starttime="20201107 14:17:02.080" endtime="20201107 14:17:12.016"></status>
+</suite>
+<status status="PASS" starttime="20201107 14:16:37.579" endtime="20201107 14:17:12.092"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0">Critical Tests</stat>
+<stat pass="8" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" id="s1" name="Login Tests">Login Tests</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Gherkin Login">Login Tests.Gherkin Login</stat>
+<stat pass="6" fail="0" id="s1-s2" name="Invalid Login">Login Tests.Invalid Login</stat>
+<stat pass="1" fail="0" id="s1-s3" name="Valid Login">Login Tests.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
