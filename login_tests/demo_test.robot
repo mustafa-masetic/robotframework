@@ -1,8 +1,9 @@
 *** Settings ***
-Library    SeleniumLibrary
+Library    Selenium2Library
 
 Suite Teardown    Close All Browsers
 
+*** Test Cases ***
 Headless Chrome - Open Browser
     ${chrome_options} =     Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}   add_argument    headless
@@ -13,4 +14,3 @@ Headless Chrome - Open Browser
 
     Maximize Browser Window
     Capture Page Screensho
-                    
