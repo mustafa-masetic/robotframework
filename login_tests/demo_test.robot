@@ -13,4 +13,4 @@ Headless Chrome - Open Browser
     Open Browser    http://cnn.com    browser=chrome    remote_url=http://localhost:4444/wd/hub     desired_capabilities=${options}
 
     Maximize Browser Window
-    SeleniumLibrary.Capture Page Screensho
+    SeleniumLibrary.Capture Page Screenshot
