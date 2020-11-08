@@ -8,17 +8,18 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SERVER}         localhost:7272
+${SELENIUM}       remote_url=http://localhost:4444/wd/hub
 ${BROWSER}        Chrome
 ${DELAY}          0
 ${VALID USER}     demo
-${VALID PASSWORD}    mode
+${VALID PASSWORD} mode
 ${LOGIN URL}      http://${SERVER}/
 ${WELCOME URL}    http://${SERVER}/welcome.html
 ${ERROR URL}      http://${SERVER}/error.html
 
 *** Keywords ***
 Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Open Browser ${LOGIN URL} ${BROWSER} ${SELENIUM}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
