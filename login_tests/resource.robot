@@ -8,7 +8,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SERVER}          localhost:7272
-${SELENIUM-SERVER} http://localhost:4444/wd/hub
+${SELENIUM SERVER} http://localhost:4444/wd/hub
 ${BROWSER}         Chrome
 ${DELAY}           0
 ${VALID USER}      demo
@@ -24,7 +24,7 @@ Open Browser To Login Page
     Call Method    ${chrome_options}   add_argument    disable-gpu
     ${options}=     Call Method     ${chrome_options}    to_capabilities     
 
-    Open Browser    ${LOGIN URL}    ${BROWSER}    ${SELENIUM-SERVER}     desired_capabilities=${options}
+    Open Browser    ${LOGIN URL}    ${BROWSER}    ${SELENIUM SERVER}     desired_capabilities=${options}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
