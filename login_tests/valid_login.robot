@@ -6,8 +6,8 @@ Documentation     A test suite with a single test for valid login.
 Resource          resource.robot
 
 *** Test Cases ***
-Valid Login chrome headless
-    Open Browser To Login Page chrome
+Valid Login
+    Open Browser To Login Page
     Input Username    demo
     Input Password    mode
     Submit Credentials
