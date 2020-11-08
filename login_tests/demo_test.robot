@@ -23,7 +23,7 @@ Headless Chrome - Open Browser
     Call Method    ${chrome_options}   add_argument    disable-gpu
     ${options}=     Call Method     ${chrome_options}    to_capabilities     
 
-    Open Browser    http://cnn.com    browser=chrome    desired_capabilities=${options}
+    Open Browser    http://cnn.com    browser=chrome    remote_url=http://localhost:4444/wd/hub     desired_capabilities=${options}
 
     Maximize Browser Window
     Capture Page Screensho
