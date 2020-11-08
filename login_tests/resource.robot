@@ -8,7 +8,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SERVER}          localhost:7272
-${SELENIUM-SERVER} remote_url=http://localhost:4444/wd/hub
+${SELENIUM-SERVER} http://localhost:4444/wd/hub
 ${BROWSER}         Chrome
 ${DELAY}           0
 ${VALID USER}      demo
